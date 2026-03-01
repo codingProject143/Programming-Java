@@ -1,0 +1,36 @@
+_ Write a program to print all alternative even numbers in the given range if no numbers then print NO NUMBERS if starting range is greater than ending range print INVALID INPUTS
+-
+
+import java.util.Scanner;
+class main{
+    public static void main(String[] args){
+        Scanner Sc = new Scanner(System.in);
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c = 0;
+        if(a>b || b<a)
+        {
+            System.out.print("INVALID INPUTS");
+        }
+        else
+        {
+            for(int i=a;i<=b;i++)
+            {
+                if(i%2==0)
+                {
+                    c++;
+                    if(c%2==1)
+                    {
+                        System.out.print(i+" ");
+                    
+                    }
+                }
+            }
+            if(c==0)
+            {
+                System.out.print("NO NUMBERS");
+            }
+            
+        }
+    }
+}
