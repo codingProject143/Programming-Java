@@ -1,0 +1,38 @@
+Write program to print the following series which is shown in Given Examples.
+Constraints:
+Input          :- First Line of Input Consists of One Integer Value.
+
+                     Second Line of Input Consists of One Integer Value.
+
+Output        :- Print the Following Series.
+
+Constraints  :- Given Inputs Must be Greater than Zero or else Print "Invalid Inputs".
+
+import java.util.Scanner;
+class main{
+    public static void main (String[] args){
+        Scanner Sc=new Scanner(System.in);
+        int n1=Sc.nextInt();
+        int n2= Sc.nextInt();
+        int c=0;
+        if (n1>0 && n1<n2)
+        {
+            for(int i=n1;i<=n2;i+=2)
+            {
+                
+                 c++;
+                    if(c!=1)
+                    {
+                        System.out.print(", "+i+"^2");
+                    }
+                    else
+                    System.out.print(i+"^2");
+                
+            }
+        }
+        else
+        {
+            System.out.print("Invalid Inputs");
+        }
+    }
+}
