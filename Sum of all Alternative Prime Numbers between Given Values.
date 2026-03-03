@@ -1,0 +1,66 @@
+/* Write a program to find the Sum of all Alternative Prime Numbers between Given Values.
+Constraints:
+Input          :- First Line of Input Consists of One Integer Value ( Minimum Value ) .
+                     Second Line of Input Consists of One Integer Value ( Maximum Value ) .
+Output        :- Print Sum of All Alternate Prime Numbers Between the Given Values.
+Constraints  :- Given Inputs Must be Greater than Zero or else Print Invalid Inputs.
+                If no Primes Numbers are identified in Between the Given Values then Print No Prime Numbers.
+Example:
+Input 1  :    25
+              100
+Output 1:    462
+Input 2  :    -6  
+              -200
+Output 2:     Invalid Inputs
+
+Input 3  :    19
+              61
+Output 3:    201
+
+Input 4  :    90
+               97
+Output 4:    No Prime Numbers */
+
+import java.util.Scanner;
+class Main
+{
+    public static void main(String []args)
+    {
+        Scanner Sc= new Scanner(System.in);
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c=0;
+        int sum =0;
+        int count=0;
+        if(a<1 || b<1)
+        {
+            System.out.print("Invalid Inputs");
+        }
+        else
+        {
+            for(int i=a+1;i<b;i++)
+            {
+                int fc = 0;
+                for (int j = 1;j<=i;j++)
+                {
+                    if(i%j==0)
+                    {
+                        fc++;
+                    }
+                }
+                if(fc==2)
+                {
+                    c++;
+                    if(c%2==1)
+                    {
+                    sum=sum+i;
+                    }
+                }
+            }
+            if(c==0)
+            System.out.print("No Prime Numbers");
+            else
+            System.out.print(sum);
+        }
+    }
+}
