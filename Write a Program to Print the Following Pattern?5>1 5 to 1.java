@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int c = n;
+        if(n<=0)
+        {
+            System.out.print("Invalid Input");
+        }
+        else
+        {
+            for(int i=n;i>=1;i--)
+            {
+                for(int j=i;j>=1;j--)
+                {
+                    System.out.print(j+" ");
+                }
+                System.out.println();
+            }
+        } 
+    }
+}
