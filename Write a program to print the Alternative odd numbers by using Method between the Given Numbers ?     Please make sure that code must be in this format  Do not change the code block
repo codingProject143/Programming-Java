@@ -1,0 +1,68 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class AlternativeOddNumbers {
+    
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        
+
+        if (n1 == 0 && n2 == 0) {
+            System.out.println("Both Inputs are Zero");
+            return;
+        }
+        if (n1 == 0) {
+            System.out.println("First Input is Zero");
+            return;
+        }
+        if (n2 == 0) {
+            System.out.println("Second Input is Zero");
+            return;
+        }
+        
+    
+        n1 = Math.abs(n1);
+        n2 = Math.abs(n2);
+        
+        // Ensure n1 is smaller than n2
+        if (n1 > n2) {
+            int temp = n1;
+            n1 = n2;
+            n2 = temp;
+        }
+        
+        printAlternativeOdds(n1, n2);
+        sc.close();
+    }
+    
+  
+    public static void printAlternativeOdds(int start, int end) {
+        ArrayList<Integer> odds = new ArrayList<>();
+        boolean printNext = true;
+        
+        // Collect all odd numbers first
+        for (int i = start + 1; i < end; i++) {
+            if (i % 2 != 0) {
+                odds.add(i);
+            }
+        }
+        
+       
+        if (odds.isEmpty()) {
+            System.out.println("No Odd Numbers Between them");
+        } else {
+            StringBuilder output = new StringBuilder();
+            for (int i = 0; i < odds.size(); i += 2) {
+                if (i > 0) {
+                    output.append(", ");
+                }
+                output.append(odds.get(i));
+            }
+            output.append(".");
+            System.out.println(output);
+        }
+    }
+}
