@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int dec = sc.nextInt();
+        String hd = "";
+        if(dec<0)
+        {
+            dec=-dec;
+        }
+        if(dec==0)
+        {
+            System.out.print("Given Input is InValid.");
+        }
+        while(dec>0)
+        {
+            int r=dec%16;
+            dec=dec/16;
+            if(r<=9)
+            {
+                hd =r+hd;
+            }
+            else
+            {
+                hd=(char)(r+55)+hd;
+            }
+        }
+        System.out.print(hd);
+    }
+}
