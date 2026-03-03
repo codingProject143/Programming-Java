@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        int a=0;
+        int b=1;
+        if(n<0)
+        {
+           n = -n;
+        }
+        if(n==0)
+        {
+            System.out.print("Invalid Input");
+        }
+        else
+        {
+           for(int i=1;i<=n;i++)
+           // while(a<=n)
+            {
+                System.out.print(a+" ");
+                int c=a+b;
+                a=b;
+                b=c;
+                
+            }
+        }
+    }
+}
